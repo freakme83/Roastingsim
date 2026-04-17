@@ -31,8 +31,19 @@ const format = (value: number) => value.toFixed(2);
 
 const render = () => {
   const snapshot = engine.getCurrentSnapshot();
+  const beanColor = engine.getBeanColor();
+
   metricsEl.innerHTML = `
     <div><strong>State</strong><br/>${engine.getState()}</div>
+    <div><strong>Phase</strong><br/>${snapshot.phase}</div>
+    <div>
+      <strong>Bean Color</strong><br/>
+      <span
+        style="display:inline-block;width:1rem;height:1rem;border-radius:4px;border:1px solid rgba(255,255,255,0.25);background-color:${beanColor};vertical-align:middle;"
+        title="${beanColor}"
+      ></span>
+      <span style="margin-left:0.4rem;">${beanColor}</span>
+    </div>
     <div><strong>Time (s)</strong><br/>${format(snapshot.time)}</div>
     <div><strong>BT (°C)</strong><br/>${format(snapshot.bt)}</div>
     <div><strong>ET (°C)</strong><br/>${format(snapshot.et)}</div>
