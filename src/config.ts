@@ -9,6 +9,7 @@ export interface MachineProfile {
   etCoolingFactor: number;
   beanHeatAbsorption: number;
   beanHeatLossFactor: number;
+  exothermicPower: number;
 }
 
 export interface BeanProfile {
@@ -37,6 +38,7 @@ export const DEFAULT_MACHINE_PROFILE: MachineProfile = {
   etCoolingFactor: 0.015,
   beanHeatAbsorption: 0.011,
   beanHeatLossFactor: 0.004,
+  exothermicPower: 0.002,
 };
 
 export const BEAN_LIBRARY: Record<string, BeanProfile> = {
